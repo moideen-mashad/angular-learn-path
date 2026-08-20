@@ -1,31 +1,31 @@
-<footer class="bg-slate-900 text-slate-300 dark:bg-slate-950 transition-colors duration-300 border-t border-slate-800">
+<footer class="bg-neutral-950 text-neutral-400 border-t border-neutral-900 transition-colors duration-300">
   <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
     <div class="xl:grid xl:grid-cols-3 xl:gap-8">
       
       <!-- Brand column -->
       <div class="space-y-6 xl:col-span-1">
-        <a routerLink="/" class="flex items-center space-x-2">
-          <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 shadow-md">
-            <span class="text-lg font-bold text-white">{{ logoLetter }}</span>
+        <a routerLink="/" class="flex items-center space-x-2.5">
+          <div class="flex h-8 w-8 items-center justify-center rounded bg-neutral-800 text-white font-bold">
+            <span>{{ logoLetter }}</span>
           </div>
-          <span class="text-xl font-extrabold tracking-tight text-white">
-            {{ brandPrefix }}<span class="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">{{ brandSuffix }}</span>
+          <span class="text-lg font-bold tracking-tight text-white">
+            {{ brandPrefix }}<span class="font-light text-neutral-500">{{ brandSuffix }}</span>
           </span>
         </a>
-        <p class="text-sm max-w-xs text-slate-400">
+        <p class="text-sm max-w-xs text-neutral-400 leading-relaxed">
           {{ description }}
         </p>
         <!-- Social Icons -->
         <div class="flex space-x-5">
           @for (social of socials; track social.label) {
-            <a [href]="social.href" class="text-slate-400 hover:text-white transition-colors duration-200">
+            <a [href]="social.href" class="text-neutral-500 hover:text-white transition-colors duration-250">
               <span class="sr-only">{{ social.label }}</span>
               @if (social.type === 'fill') {
-                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                   <path fill-rule="evenodd" clip-rule="evenodd" [attr.d]="social.d" />
                 </svg>
               } @else {
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path [attr.d]="social.d" />
                 </svg>
               }
@@ -38,8 +38,8 @@
       <div class="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0 sm:grid-cols-3">
         @for (section of sections; track section.title; let isLast = $last) {
           <div [class]="isLast ? 'col-span-2 sm:col-span-1 mt-8 sm:mt-0' : ''">
-            <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-400">{{ section.title }}</h3>
-            <ul class="mt-4 space-y-3 text-sm">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-neutral-500">{{ section.title }}</h3>
+            <ul class="mt-4 space-y-3.5 text-sm">
               @for (link of section.links; track link.label) {
                 <li>
                   <a [routerLink]="link.routerLink" class="hover:text-white transition-colors duration-200">{{ link.label }}</a>
@@ -53,9 +53,9 @@
     </div>
 
     <!-- Bottom Copyright -->
-    <div class="mt-12 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 space-y-4 md:space-y-0">
+    <div class="mt-12 border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center text-[11px] text-neutral-600 space-y-4 md:space-y-0">
       <p>{{ copyrightText }}</p>
-      <p>{{ attributionText }}</p>
+      <p class="font-mono">{{ attributionText }}</p>
     </div>
   </div>
 </footer>

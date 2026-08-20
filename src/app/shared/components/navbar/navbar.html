@@ -1,14 +1,14 @@
-<nav class="sticky top-0 z-50 w-full border-b border-slate-200/50 bg-white/80 backdrop-blur-md dark:border-slate-800/50 dark:bg-slate-950/80 transition-all duration-300">
+<nav class="sticky top-0 z-50 w-full border-b border-neutral-200/60 bg-[#FAF9F6]/90 backdrop-blur-md dark:border-neutral-800/60 dark:bg-neutral-950/90 transition-all duration-300">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <!-- Logo -->
       <div class="flex flex-shrink-0 items-center">
-        <a routerLink="/" class="group flex items-center space-x-2">
-          <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 shadow-md transition-transform group-hover:scale-105">
-            <span class="text-lg font-bold text-white">{{ logoLetter }}</span>
+        <a routerLink="/" class="group flex items-center space-x-2.5">
+          <div class="flex h-8 w-8 items-center justify-center rounded bg-neutral-900 dark:bg-neutral-100 shadow-sm transition-colors duration-300">
+            <span class="text-sm font-bold text-white dark:text-neutral-950">{{ logoLetter }}</span>
           </div>
-          <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent dark:from-white dark:to-slate-300">
-            {{ brandPrefix }}<span class="bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text">{{ brandSuffix }}</span>
+          <span class="text-lg font-bold tracking-tight text-neutral-900 dark:text-white">
+            {{ brandPrefix }}<span class="font-light text-neutral-500 dark:text-neutral-450">{{ brandSuffix }}</span>
           </span>
         </a>
       </div>
@@ -18,9 +18,9 @@
         <div class="flex items-center space-x-8">
           @for (item of navItems; track item.label) {
             <a [routerLink]="item.routerLink" 
-               routerLinkActive="text-indigo-600 dark:text-indigo-400 font-bold" 
+               routerLinkActive="text-neutral-900 dark:text-white font-semibold" 
                [routerLinkActiveOptions]="{exact: item.routerLink === '/'}"
-               class="text-sm font-semibold text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 transition-colors">
+               class="text-sm font-medium text-neutral-500 hover:text-neutral-900 dark:text-neutral-450 dark:hover:text-white transition-colors duration-200">
               {{ item.label }}
             </a>
           }
@@ -29,23 +29,22 @@
 
       <!-- CTA Button -->
       <div class="hidden md:flex items-center space-x-4">
-        <a href="#" class="rounded-lg px-4 py-2 text-sm font-semibold text-slate-700 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white transition-colors">{{ signInText }}</a>
-        <a routerLink="/contact" class="relative group overflow-hidden rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-indigo-500/25 transition-all duration-300 hover:-translate-y-0.5">
-          <span class="relative z-10">{{ getStartedText }}</span>
-          <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-purple-600 to-indigo-600 transition-transform duration-300 group-hover:translate-x-0"></div>
+        <a href="#" class="rounded px-4 py-2 text-xs font-bold uppercase tracking-wider text-neutral-500 hover:text-neutral-900 dark:text-neutral-450 dark:hover:text-white transition-colors duration-200">{{ signInText }}</a>
+        <a routerLink="/contact" class="rounded border border-neutral-900 px-5 py-2 text-xs font-bold uppercase tracking-wider text-neutral-900 hover:bg-neutral-900 hover:text-white dark:border-neutral-100 dark:text-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-950 transition-all duration-300">
+          {{ getStartedText }}
         </a>
       </div>
 
       <!-- Mobile menu button -->
       <div class="flex md:hidden">
-        <button (click)="toggleMobileMenu()" type="button" class="inline-flex items-center justify-center rounded-lg p-2.5 text-slate-500 hover:bg-slate-100 hover:text-slate-700 focus:outline-none dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white transition-all">
+        <button (click)="toggleMobileMenu()" type="button" class="inline-flex items-center justify-center rounded p-2 text-neutral-550 hover:bg-neutral-100 hover:text-neutral-900 focus:outline-none dark:text-neutral-450 dark:hover:bg-neutral-900 dark:hover:text-white transition-all">
           <span class="sr-only">Open main menu</span>
           @if (!isMobileMenuOpen()) {
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
           } @else {
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           }
@@ -56,19 +55,19 @@
 
   <!-- Mobile menu -->
   @if (isMobileMenuOpen()) {
-    <div class="md:hidden border-t border-slate-200/50 bg-white/95 px-4 py-4 dark:border-slate-800/50 dark:bg-slate-950/95 space-y-3 animate-fade-in-down">
+    <div class="md:hidden border-t border-neutral-200/60 bg-[#FAF9F6] px-4 py-4 dark:border-neutral-850 dark:bg-neutral-950 space-y-2">
       @for (item of navItems; track item.label) {
         <a [routerLink]="item.routerLink" 
-           routerLinkActive="text-indigo-600 bg-slate-50 dark:text-indigo-400 dark:bg-slate-900" 
+           routerLinkActive="text-neutral-900 bg-neutral-100/50 dark:text-white dark:bg-neutral-900" 
            [routerLinkActiveOptions]="{exact: item.routerLink === '/'}"
            (click)="isMobileMenuOpen.set(false)"
-           class="block rounded-lg px-3 py-2 text-base font-semibold text-slate-600 hover:bg-slate-50 hover:text-indigo-600 dark:text-slate-300 dark:hover:bg-slate-900 dark:hover:text-indigo-400 transition-all">
+           class="block rounded px-3 py-2 text-sm font-semibold text-neutral-500 hover:bg-neutral-100/50 hover:text-neutral-900 dark:text-neutral-450 dark:hover:bg-neutral-900 dark:hover:text-white transition-all">
           {{ item.label }}
         </a>
       }
-      <div class="border-t border-slate-100 pt-3 dark:border-slate-800 flex flex-col space-y-2">
-        <a href="#" class="text-center rounded-lg px-3 py-2 text-base font-semibold text-slate-600 hover:bg-slate-50 hover:text-indigo-600 dark:text-slate-300 dark:hover:bg-slate-900 transition-all">{{ signInText }}</a>
-        <a routerLink="/contact" (click)="isMobileMenuOpen.set(false)" class="text-center rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 px-3 py-2.5 text-base font-semibold text-white shadow-md transition-all">{{ getStartedText }}</a>
+      <div class="border-t border-neutral-100 pt-3 dark:border-neutral-900 flex flex-col space-y-2">
+        <a href="#" class="text-center rounded px-3 py-2 text-xs font-bold uppercase tracking-wider text-neutral-550 hover:bg-neutral-100/50 hover:text-neutral-900 transition-all">{{ signInText }}</a>
+        <a routerLink="/contact" (click)="isMobileMenuOpen.set(false)" class="text-center rounded border border-neutral-900 px-3 py-2.5 text-xs font-bold uppercase tracking-wider text-neutral-900 hover:bg-neutral-900 hover:text-white dark:border-neutral-100 dark:text-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-950 transition-all">{{ getStartedText }}</a>
       </div>
     </div>
   }
