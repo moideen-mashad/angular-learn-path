@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 interface FooterLink {
   label: string;
-  href: string;
+  routerLink: string;
 }
 
 interface FooterSection {
@@ -19,42 +20,40 @@ interface SocialLink {
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './footer.html',
 })
 export class FooterComponent {
-  logoLetter = 'A';
-  brandPrefix = 'Angular';
-  brandSuffix = 'Craft';
-  description = 'Empowering frontend developers to build beautiful, modern, high-performance web applications using the latest Angular APIs.';
-  copyrightText = '© 2026 AngularCraft Inc. All rights reserved.';
-  attributionText = 'Designed for excellence with Google DeepMind Antigravity.';
+  logoLetter = 'D';
+  brandPrefix = 'Deco';
+  brandSuffix = 'Lux';
+  description = 'Crafting luxury, high-end interior spaces tailored to reflect your unique personal story and lifestyle.';
+  copyrightText = '© 2026 DecoLux Studio. All rights reserved.';
+  attributionText = 'Designed for interior excellence with Angular.';
 
   sections: FooterSection[] = [
     {
-      title: 'Product',
+      title: 'Services',
       links: [
-        { label: 'Features', href: '#' },
-        { label: 'Pricing', href: '#' },
-        { label: 'Integrations', href: '#' },
-        { label: 'Changelog', href: '#' },
+        { label: 'Residential Design', routerLink: '/services' },
+        { label: 'Commercial Spaces', routerLink: '/services' },
+        { label: 'Lighting Curation', routerLink: '/services' },
+        { label: 'Furniture Selection', routerLink: '/services' },
       ]
     },
     {
-      title: 'Resources',
+      title: 'Company',
       links: [
-        { label: 'Documentation', href: '#' },
-        { label: 'Guides', href: '#' },
-        { label: 'API Reference', href: '#' },
-        { label: 'Community', href: '#' },
+        { label: 'About Us', routerLink: '/about' },
+        { label: 'Careers', routerLink: '/careers' },
+        { label: 'Contact Us', routerLink: '/contact' },
       ]
     },
     {
       title: 'Legal',
       links: [
-        { label: 'Privacy Policy', href: '#' },
-        { label: 'Terms of Service', href: '#' },
-        { label: 'Cookie Policy', href: '#' },
+        { label: 'Privacy Policy', routerLink: '/' },
+        { label: 'Terms of Service', routerLink: '/' },
       ]
     }
   ];

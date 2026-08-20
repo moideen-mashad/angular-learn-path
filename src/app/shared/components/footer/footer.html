@@ -4,7 +4,7 @@
       
       <!-- Brand column -->
       <div class="space-y-6 xl:col-span-1">
-        <a href="#" class="flex items-center space-x-2">
+        <a routerLink="/" class="flex items-center space-x-2">
           <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 shadow-md">
             <span class="text-lg font-bold text-white">{{ logoLetter }}</span>
           </div>
@@ -42,7 +42,7 @@
             <ul class="mt-4 space-y-3 text-sm">
               @for (link of section.links; track link.label) {
                 <li>
-                  <a [href]="link.href" class="hover:text-white transition-colors duration-200">{{ link.label }}</a>
+                  <a [routerLink]="link.routerLink" class="hover:text-white transition-colors duration-200">{{ link.label }}</a>
                 </li>
               }
             </ul>
