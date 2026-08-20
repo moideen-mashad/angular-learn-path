@@ -5,10 +5,10 @@
       <div class="flex flex-shrink-0 items-center">
         <a href="#" class="group flex items-center space-x-2">
           <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 shadow-md transition-transform group-hover:scale-105">
-            <span class="text-lg font-bold text-white">A</span>
+            <span class="text-lg font-bold text-white">{{ logoLetter }}</span>
           </div>
           <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent dark:from-white dark:to-slate-300">
-            Angular<span class="bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text">Craft</span>
+            {{ brandPrefix }}<span class="bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text">{{ brandSuffix }}</span>
           </span>
         </a>
       </div>
@@ -16,18 +16,17 @@
       <!-- Desktop Navigation Menu -->
       <div class="hidden md:block">
         <div class="flex items-center space-x-8">
-          <a href="#" class="text-sm font-semibold text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 transition-colors">Home</a>
-          <a href="#" class="text-sm font-semibold text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 transition-colors">Features</a>
-          <a href="#" class="text-sm font-semibold text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 transition-colors">Pricing</a>
-          <a href="#" class="text-sm font-semibold text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 transition-colors">About</a>
+          @for (item of navItems; track item.label) {
+            <a [href]="item.href" class="text-sm font-semibold text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 transition-colors">{{ item.label }}</a>
+          }
         </div>
       </div>
 
       <!-- CTA Button -->
       <div class="hidden md:flex items-center space-x-4">
-        <a href="#" class="rounded-lg px-4 py-2 text-sm font-semibold text-slate-700 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white transition-colors">Sign In</a>
+        <a href="#" class="rounded-lg px-4 py-2 text-sm font-semibold text-slate-700 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white transition-colors">{{ signInText }}</a>
         <a href="#" class="relative group overflow-hidden rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-indigo-500/25 transition-all duration-300 hover:-translate-y-0.5">
-          <span class="relative z-10">Get Started</span>
+          <span class="relative z-10">{{ getStartedText }}</span>
           <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-purple-600 to-indigo-600 transition-transform duration-300 group-hover:translate-x-0"></div>
         </a>
       </div>
@@ -53,13 +52,12 @@
   <!-- Mobile menu -->
   @if (isMobileMenuOpen()) {
     <div class="md:hidden border-t border-slate-200/50 bg-white/95 px-4 py-4 dark:border-slate-800/50 dark:bg-slate-950/95 space-y-3 animate-fade-in-down">
-      <a href="#" class="block rounded-lg px-3 py-2 text-base font-semibold text-slate-600 hover:bg-slate-50 hover:text-indigo-600 dark:text-slate-300 dark:hover:bg-slate-900 dark:hover:text-indigo-400 transition-all">Home</a>
-      <a href="#" class="block rounded-lg px-3 py-2 text-base font-semibold text-slate-600 hover:bg-slate-50 hover:text-indigo-600 dark:text-slate-300 dark:hover:bg-slate-900 dark:hover:text-indigo-400 transition-all">Features</a>
-      <a href="#" class="block rounded-lg px-3 py-2 text-base font-semibold text-slate-600 hover:bg-slate-50 hover:text-indigo-600 dark:text-slate-300 dark:hover:bg-slate-900 dark:hover:text-indigo-400 transition-all">Pricing</a>
-      <a href="#" class="block rounded-lg px-3 py-2 text-base font-semibold text-slate-600 hover:bg-slate-50 hover:text-indigo-600 dark:text-slate-300 dark:hover:bg-slate-900 dark:hover:text-indigo-400 transition-all">About</a>
+      @for (item of navItems; track item.label) {
+        <a [href]="item.href" class="block rounded-lg px-3 py-2 text-base font-semibold text-slate-600 hover:bg-slate-50 hover:text-indigo-600 dark:text-slate-300 dark:hover:bg-slate-900 dark:hover:text-indigo-400 transition-all">{{ item.label }}</a>
+      }
       <div class="border-t border-slate-100 pt-3 dark:border-slate-800 flex flex-col space-y-2">
-        <a href="#" class="text-center rounded-lg px-3 py-2 text-base font-semibold text-slate-600 hover:bg-slate-50 hover:text-indigo-600 dark:text-slate-300 dark:hover:bg-slate-900 transition-all">Sign In</a>
-        <a href="#" class="text-center rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 px-3 py-2.5 text-base font-semibold text-white shadow-md transition-all">Get Started</a>
+        <a href="#" class="text-center rounded-lg px-3 py-2 text-base font-semibold text-slate-600 hover:bg-slate-50 hover:text-indigo-600 dark:text-slate-300 dark:hover:bg-slate-900 transition-all">{{ signInText }}</a>
+        <a href="#" class="text-center rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 px-3 py-2.5 text-base font-semibold text-white shadow-md transition-all">{{ getStartedText }}</a>
       </div>
     </div>
   }

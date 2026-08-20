@@ -6,74 +6,56 @@
       <div class="space-y-6 xl:col-span-1">
         <a href="#" class="flex items-center space-x-2">
           <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 shadow-md">
-            <span class="text-lg font-bold text-white">A</span>
+            <span class="text-lg font-bold text-white">{{ logoLetter }}</span>
           </div>
           <span class="text-xl font-extrabold tracking-tight text-white">
-            Angular<span class="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">Craft</span>
+            {{ brandPrefix }}<span class="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">{{ brandSuffix }}</span>
           </span>
         </a>
         <p class="text-sm max-w-xs text-slate-400">
-          Empowering frontend developers to build beautiful, modern, high-performance web applications using the latest Angular APIs.
+          {{ description }}
         </p>
         <!-- Social Icons -->
         <div class="flex space-x-5">
-          <a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">
-            <span class="sr-only">GitHub</span>
-            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" clip-rule="evenodd" />
-            </svg>
-          </a>
-          <a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">
-            <span class="sr-only">Twitter</span>
-            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 18.43" />
-            </svg>
-          </a>
-          <a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">
-            <span class="sr-only">Discord</span>
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-            </svg>
-          </a>
+          @for (social of socials; track social.label) {
+            <a [href]="social.href" class="text-slate-400 hover:text-white transition-colors duration-200">
+              <span class="sr-only">{{ social.label }}</span>
+              @if (social.type === 'fill') {
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" clip-rule="evenodd" [attr.d]="social.d" />
+                </svg>
+              } @else {
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path [attr.d]="social.d" />
+                </svg>
+              }
+            </a>
+          }
         </div>
       </div>
 
       <!-- Links columns -->
       <div class="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0 sm:grid-cols-3">
-        <div>
-          <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-400">Product</h3>
-          <ul class="mt-4 space-y-3 text-sm">
-            <li><a href="#" class="hover:text-white transition-colors duration-200">Features</a></li>
-            <li><a href="#" class="hover:text-white transition-colors duration-200">Pricing</a></li>
-            <li><a href="#" class="hover:text-white transition-colors duration-200">Integrations</a></li>
-            <li><a href="#" class="hover:text-white transition-colors duration-200">Changelog</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-400">Resources</h3>
-          <ul class="mt-4 space-y-3 text-sm">
-            <li><a href="#" class="hover:text-white transition-colors duration-200">Documentation</a></li>
-            <li><a href="#" class="hover:text-white transition-colors duration-200">Guides</a></li>
-            <li><a href="#" class="hover:text-white transition-colors duration-200">API Reference</a></li>
-            <li><a href="#" class="hover:text-white transition-colors duration-200">Community</a></li>
-          </ul>
-        </div>
-        <div class="col-span-2 sm:col-span-1 mt-8 sm:mt-0">
-          <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-400">Legal</h3>
-          <ul class="mt-4 space-y-3 text-sm">
-            <li><a href="#" class="hover:text-white transition-colors duration-200">Privacy Policy</a></li>
-            <li><a href="#" class="hover:text-white transition-colors duration-200">Terms of Service</a></li>
-            <li><a href="#" class="hover:text-white transition-colors duration-200">Cookie Policy</a></li>
-          </ul>
-        </div>
+        @for (section of sections; track section.title; let isLast = $last) {
+          <div [class]="isLast ? 'col-span-2 sm:col-span-1 mt-8 sm:mt-0' : ''">
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-400">{{ section.title }}</h3>
+            <ul class="mt-4 space-y-3 text-sm">
+              @for (link of section.links; track link.label) {
+                <li>
+                  <a [href]="link.href" class="hover:text-white transition-colors duration-200">{{ link.label }}</a>
+                </li>
+              }
+            </ul>
+          </div>
+        }
       </div>
       
     </div>
 
     <!-- Bottom Copyright -->
     <div class="mt-12 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 space-y-4 md:space-y-0">
-      <p>&copy; 2026 AngularCraft Inc. All rights reserved.</p>
-      <p>Designed for excellence with Google DeepMind Antigravity.</p>
+      <p>{{ copyrightText }}</p>
+      <p>{{ attributionText }}</p>
     </div>
   </div>
 </footer>
