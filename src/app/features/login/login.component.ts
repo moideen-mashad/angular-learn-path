@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormGroup, FormControl, ReactiveFormsModule, Validators, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, FormsModule],
   templateUrl: './login.component.html',
 })
 export class LoginComponent {
@@ -27,4 +27,6 @@ export class LoginComponent {
   viewDescription(): void {
     this.description = 'Welcome to DecoLux, where we create stunning interior designs for luxury spaces. Our team of talented designers works together to bring your vision to life.';
   }
+
+  getName:any = '';
 }

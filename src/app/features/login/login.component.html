@@ -41,11 +41,14 @@
 
       </div>
     </form>
-    <button (click)="viewDescription()"
+    <!-- <button (click)="viewDescription()"
       class="group relative flex w-full justify-center rounded-md bg-neutral-900 px-3 py-3 text-sm font-semibold text-white hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 dark:bg-white dark:text-neutral-950 dark:hover:bg-neutral-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all">
       View Description
     </button>
-    <p class="mt-4 text-sm text-neutral-600 dark:text-neutral-400 text-center">{{ description }}</p>
+    <p class="mt-4 text-sm text-neutral-600 dark:text-neutral-400 text-center">{{ description }}</p> -->
 
+    <input [(ngModel)]="getName" type="text"
+      class="relative block w-full rounded-md border-0 py-2.5 text-neutral-900 ring-1 ring-inset ring-neutral-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-neutral-900 sm:text-sm sm:leading-6 dark:bg-neutral-950 dark:text-white dark:ring-neutral-700 dark:focus:ring-neutral-100 px-3 mt-1.5 transition-all">
+    <h1 style="color: aliceblue !important;">hello {{ getName }}</h1>
   </div>
 </section>
