@@ -29,7 +29,7 @@
 
       <!-- CTA Button -->
       <div class="hidden md:flex items-center space-x-4">
-        <a href="#" class="rounded px-4 py-2 text-xs font-bold uppercase tracking-wider text-neutral-500 hover:text-neutral-900 dark:text-neutral-450 dark:hover:text-white transition-colors duration-200">{{ signInText }}</a>
+        <a routerLink="/login" class="rounded px-4 py-2 text-xs font-bold uppercase tracking-wider text-neutral-500 hover:text-neutral-900 dark:text-neutral-450 dark:hover:text-white transition-colors duration-200">{{ signInText }}</a>
         <a routerLink="/contact" class="rounded border border-neutral-900 px-5 py-2 text-xs font-bold uppercase tracking-wider text-neutral-900 hover:bg-neutral-900 hover:text-white dark:border-neutral-100 dark:text-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-950 transition-all duration-300">
           {{ getStartedText }}
         </a>
@@ -66,7 +66,7 @@
         </a>
       }
       <div class="border-t border-neutral-100 pt-3 dark:border-neutral-900 flex flex-col space-y-2">
-        <a href="#" class="text-center rounded px-3 py-2 text-xs font-bold uppercase tracking-wider text-neutral-550 hover:bg-neutral-100/50 hover:text-neutral-900 transition-all">{{ signInText }}</a>
+        <a routerLink="/login" (click)="closeMobileMenu()" class="text-center rounded px-3 py-2 text-xs font-bold uppercase tracking-wider text-neutral-550 hover:bg-neutral-100/50 hover:text-neutral-900 transition-all">{{ signInText }}</a>
         <a routerLink="/contact" (click)="closeMobileMenu()" class="text-center rounded border border-neutral-900 px-3 py-2.5 text-xs font-bold uppercase tracking-wider text-neutral-900 hover:bg-neutral-900 hover:text-white dark:border-neutral-100 dark:text-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-950 transition-all">{{ getStartedText }}</a>
       </div>
     </div>
