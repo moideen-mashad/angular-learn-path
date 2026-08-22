@@ -19,4 +19,12 @@ export class LoginComponent {
       console.log('Form is invalid.');
     }
   }
+  clickMe(): void {
+    alert(`Hi, ${this.loginForm.value.username}`);
+  }
+  description = '';
+
+  viewDescription(): void {
+    this.description = 'Welcome to DecoLux, where we create stunning interior designs for luxury spaces. Our team of talented designers works together to bring your vision to life.';
+  }
 }
