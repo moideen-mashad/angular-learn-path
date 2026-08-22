@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, ReactiveFormsModule, Validators, FormsModule } from '@angular/forms';
-
+import {
+  FormGroup,
+  FormControl,
+  ReactiveFormsModule,
+  Validators,
+  FormsModule,
+} from '@angular/forms';
+import { Userdata } from '../../services/userdata';
 @Component({
   selector: 'app-login',
   imports: [ReactiveFormsModule, FormsModule],
@@ -25,8 +31,13 @@ export class LoginComponent {
   description = '';
 
   viewDescription(): void {
-    this.description = 'Welcome to DecoLux, where we create stunning interior designs for luxury spaces. Our team of talented designers works together to bring your vision to life.';
+    this.description =
+      'Welcome to DecoLux, where we create stunning interior designs for luxury spaces. Our team of talented designers works together to bring your vision to life.';
   }
 
-  getName:any = '';
+  getName: any = '';
+  users: any;
+  constructor(private userdata: Userdata) {
+    this.users = this.userdata.users();
+  }
 }
