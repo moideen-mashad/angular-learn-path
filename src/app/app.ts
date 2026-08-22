@@ -1,7 +1,7 @@
 import { Component, signal, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent, FooterComponent } from '@layout/index';
-import { SmoothScrollService } from '@core/index';
+import { NavbarComponent, FooterComponent } from './layout';
+import { SmoothScrollService } from './core';
 
 @Component({
   selector: 'app-root',
