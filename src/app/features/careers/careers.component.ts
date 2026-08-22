@@ -1,32 +1,20 @@
 import { Component } from '@angular/core';
-
-interface JobOpening {
-  title: string;
-  department: string;
-  location: string;
-  type: string;
-  description: string;
-}
-
-interface BenefitItem {
-  title: string;
-  description: string;
-}
+import { JobOpening, BenefitItem } from './models/careers.model';
 
 @Component({
   selector: 'app-careers',
   imports: [],
-  templateUrl: './careers.html',
+  templateUrl: './careers.component.html',
 })
 export class CareersComponent {
-  header = 'Careers at DecoLux';
-  subHeader = 'Join a collaborative studio of creative minds shaping high-end spaces around the globe.';
+  readonly header = 'Careers at DecoLux';
+  readonly subHeader = 'Join a collaborative studio of creative minds shaping high-end spaces around the globe.';
 
-  cultureHeader = 'Life at DecoLux';
-  cultureSub = 'We believe great designs start with happy, inspired creative minds.';
-  cultureText = 'DecoLux is an architecture-centric environment where ideas flow freely regardless of seniority. We coordinate seasonal trips to design biennials in Venice/Milan, support continuous professional learning, and offer private health cover and premium sit-stand studio spaces.';
+  readonly cultureHeader = 'Life at DecoLux';
+  readonly cultureSub = 'We believe great designs start with happy, inspired creative minds.';
+  readonly cultureText = 'DecoLux is an architecture-centric environment where ideas flow freely regardless of seniority. We coordinate seasonal trips to design biennials in Venice/Milan, support continuous professional learning, and offer private health cover and premium sit-stand studio spaces.';
 
-  benefits: BenefitItem[] = [
+  readonly benefits: BenefitItem[] = [
     {
       title: 'Global Design Excursions',
       description: 'Fully sponsored trips to international design expos, furniture fairs, and architectural biennials.'
@@ -41,10 +29,10 @@ export class CareersComponent {
     }
   ];
 
-  jobsHeader = 'Current Opportunities';
-  jobsSub = 'Find your path and build your career styling luxury interior designs.';
+  readonly jobsHeader = 'Current Opportunities';
+  readonly jobsSub = 'Find your path and build your career styling luxury interior designs.';
 
-  jobs: JobOpening[] = [
+  readonly jobs: JobOpening[] = [
     {
       title: 'Senior Interior Architect',
       department: 'Residential Feature Team',

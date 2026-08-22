@@ -1,28 +1,16 @@
 import { Component } from '@angular/core';
-
-interface DesignService {
-  title: string;
-  description: string;
-  price: string;
-  icon: string;
-}
-
-interface ProcessStep {
-  stepNumber: string;
-  title: string;
-  description: string;
-}
+import { DesignService, ProcessStep } from './models/services.model';
 
 @Component({
   selector: 'app-services',
   imports: [],
-  templateUrl: './services.html',
+  templateUrl: './services.component.html',
 })
 export class ServicesComponent {
-  header = 'Our Design Services';
-  subHeader = 'From spatial planning to bespoke furniture sourcing, we tailor every layout for absolute elegance.';
+  readonly header = 'Our Design Services';
+  readonly subHeader = 'From spatial planning to bespoke furniture sourcing, we tailor every layout for absolute elegance.';
 
-  services: DesignService[] = [
+  readonly services: DesignService[] = [
     {
       title: 'Residential Architecture',
       description: 'Full-scale luxury home designs, smart home layouts, kitchen planning, and custom bedrooms.',
@@ -49,10 +37,10 @@ export class ServicesComponent {
     }
   ];
 
-  processHeader = 'Our Design Process';
-  processSub = 'A structured, transparent methodology ensuring every phase aligns with your aspirations.';
+  readonly processHeader = 'Our Design Process';
+  readonly processSub = 'A structured, transparent methodology ensuring every phase aligns with your aspirations.';
 
-  processSteps: ProcessStep[] = [
+  readonly processSteps: ProcessStep[] = [
     {
       stepNumber: '01',
       title: 'Consultation & Discovery',

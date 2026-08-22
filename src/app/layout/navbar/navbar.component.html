@@ -60,14 +60,14 @@
         <a [routerLink]="item.routerLink" 
            routerLinkActive="text-neutral-900 bg-neutral-100/50 dark:text-white dark:bg-neutral-900" 
            [routerLinkActiveOptions]="{exact: item.routerLink === '/'}"
-           (click)="isMobileMenuOpen.set(false)"
+           (click)="closeMobileMenu()"
            class="block rounded px-3 py-2 text-sm font-semibold text-neutral-500 hover:bg-neutral-100/50 hover:text-neutral-900 dark:text-neutral-450 dark:hover:bg-neutral-900 dark:hover:text-white transition-all">
           {{ item.label }}
         </a>
       }
       <div class="border-t border-neutral-100 pt-3 dark:border-neutral-900 flex flex-col space-y-2">
         <a href="#" class="text-center rounded px-3 py-2 text-xs font-bold uppercase tracking-wider text-neutral-550 hover:bg-neutral-100/50 hover:text-neutral-900 transition-all">{{ signInText }}</a>
-        <a routerLink="/contact" (click)="isMobileMenuOpen.set(false)" class="text-center rounded border border-neutral-900 px-3 py-2.5 text-xs font-bold uppercase tracking-wider text-neutral-900 hover:bg-neutral-900 hover:text-white dark:border-neutral-100 dark:text-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-950 transition-all">{{ getStartedText }}</a>
+        <a routerLink="/contact" (click)="closeMobileMenu()" class="text-center rounded border border-neutral-900 px-3 py-2.5 text-xs font-bold uppercase tracking-wider text-neutral-900 hover:bg-neutral-900 hover:text-white dark:border-neutral-100 dark:text-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-950 transition-all">{{ getStartedText }}</a>
       </div>
     </div>
   }

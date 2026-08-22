@@ -1,37 +1,21 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-
-interface FooterLink {
-  label: string;
-  routerLink: string;
-}
-
-interface FooterSection {
-  title: string;
-  links: FooterLink[];
-}
-
-interface SocialLink {
-  label: string;
-  href: string;
-  type: 'fill' | 'stroke';
-  d: string;
-}
+import { FooterSection, SocialLink } from './footer.model';
 
 @Component({
   selector: 'app-footer',
   imports: [RouterLink],
-  templateUrl: './footer.html',
+  templateUrl: './footer.component.html',
 })
 export class FooterComponent {
-  logoLetter = 'D';
-  brandPrefix = 'Deco';
-  brandSuffix = 'Lux';
-  description = 'Crafting luxury, high-end interior spaces tailored to reflect your unique personal story and lifestyle.';
-  copyrightText = '© 2026 DecoLux Studio. All rights reserved.';
-  attributionText = 'Designed for interior excellence with Angular.';
+  readonly logoLetter = 'D';
+  readonly brandPrefix = 'Deco';
+  readonly brandSuffix = 'Lux';
+  readonly description = 'Crafting luxury, high-end interior spaces tailored to reflect your unique personal story and lifestyle.';
+  readonly copyrightText = '© 2026 DecoLux Studio. All rights reserved.';
+  readonly attributionText = 'Designed for interior excellence with Angular.';
 
-  sections: FooterSection[] = [
+  readonly sections: FooterSection[] = [
     {
       title: 'Services',
       links: [
@@ -58,7 +42,7 @@ export class FooterComponent {
     }
   ];
 
-  socials: SocialLink[] = [
+  readonly socials: SocialLink[] = [
     {
       label: 'GitHub',
       href: '#',

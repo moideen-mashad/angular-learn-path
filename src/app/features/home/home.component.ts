@@ -1,35 +1,24 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-
-interface BrandPillar {
-  title: string;
-  description: string;
-  icon: string;
-}
-
-interface Testimonial {
-  quote: string;
-  author: string;
-  role: string;
-}
+import { BrandPillar, Testimonial } from './models/home.model';
 
 @Component({
   selector: 'app-home',
   imports: [RouterLink],
-  templateUrl: './home.html',
+  templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  badgeText = 'Award-Winning Interior Architecture';
-  heroTitlePrefix = 'Spaces Crafted to';
-  heroTitleHighlight = 'Inspire Living';
-  heroDescription = 'DecoLux Studio designs bespoke residential and commercial environments that merge absolute functionality with timeless, sophisticated aesthetics.';
-  primaryCta = 'Explore Portfolio';
-  secondaryCta = 'Book Consultation';
+  readonly badgeText = 'Award-Winning Interior Architecture';
+  readonly heroTitlePrefix = 'Spaces Crafted to';
+  readonly heroTitleHighlight = 'Inspire Living';
+  readonly heroDescription = 'DecoLux Studio designs bespoke residential and commercial environments that merge absolute functionality with timeless, sophisticated aesthetics.';
+  readonly primaryCta = 'Explore Portfolio';
+  readonly secondaryCta = 'Book Consultation';
 
-  pillarsHeader = 'Our Design Philosophy';
-  pillarsSub = 'How we transform blank canvases into exquisite architectural masterpieces.';
+  readonly pillarsHeader = 'Our Design Philosophy';
+  readonly pillarsSub = 'How we transform blank canvases into exquisite architectural masterpieces.';
 
-  pillars: BrandPillar[] = [
+  readonly pillars: BrandPillar[] = [
     {
       title: 'Bespoke Craftsmanship',
       description: 'Custom cabinetry, handpicked fabrics, and signature furniture curations sourced globally.',
@@ -47,10 +36,10 @@ export class HomeComponent {
     }
   ];
 
-  testimonialHeader = 'Client Experiences';
-  testimonialSub = 'Read what our clients say about their new custom residential and commercial spaces.';
+  readonly testimonialHeader = 'Client Experiences';
+  readonly testimonialSub = 'Read what our clients say about their new custom residential and commercial spaces.';
   
-  testimonials: Testimonial[] = [
+  readonly testimonials: Testimonial[] = [
     {
       quote: 'DecoLux transformed our penthouses into a breathtaking sanctuary. Their attention to custom wood detailing is unmatched.',
       author: 'Eleanor Vance',

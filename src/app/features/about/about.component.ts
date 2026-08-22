@@ -1,34 +1,23 @@
 import { Component } from '@angular/core';
-
-interface TeamMember {
-  name: string;
-  role: string;
-  bio: string;
-  initials: string;
-}
-
-interface ValueItem {
-  title: string;
-  description: string;
-}
+import { TeamMember, ValueItem } from './models/about.model';
 
 @Component({
   selector: 'app-about',
   imports: [],
-  templateUrl: './about.html',
+  templateUrl: './about.component.html',
 })
 export class AboutComponent {
-  header = 'About DecoLux Studio';
-  subHeader = 'A team of passionate architects, designers, and curators redefining modern spatial aesthetics.';
+  readonly header = 'About DecoLux Studio';
+  readonly subHeader = 'A team of passionate architects, designers, and curators redefining modern spatial aesthetics.';
 
-  storyTitle = 'Our Story';
-  storyParagraph1 = 'Founded in 2018, DecoLux Studio emerged from a shared belief that interior spaces are not merely containers, but canvas structures for self-expression. We began as a small boutique consultancy sourcing bespoke marble and custom cabinetry for residential clients.';
-  storyParagraph2 = 'Today, we are an award-winning design agency handling luxury penthouses, flagship commercial spaces, and high-end residential estates globally. We maintain our core commitment to absolute precision, details, and sustainable high-quality materials.';
+  readonly storyTitle = 'Our Story';
+  readonly storyParagraph1 = 'Founded in 2018, DecoLux Studio emerged from a shared belief that interior spaces are not merely containers, but canvas structures for self-expression. We began as a small boutique consultancy sourcing bespoke marble and custom cabinetry for residential clients.';
+  readonly storyParagraph2 = 'Today, we are an award-winning design agency handling luxury penthouses, flagship commercial spaces, and high-end residential estates globally. We maintain our core commitment to absolute precision, details, and sustainable high-quality materials.';
 
-  teamHeader = 'The Creative Minds';
-  teamSub = 'Meet the senior design leads steering our bespoke creative executions.';
+  readonly teamHeader = 'The Creative Minds';
+  readonly teamSub = 'Meet the senior design leads steering our bespoke creative executions.';
 
-  team: TeamMember[] = [
+  readonly team: TeamMember[] = [
     {
       name: 'Julianne Vance',
       role: 'Founding Partner & Principal Designer',
@@ -49,8 +38,8 @@ export class AboutComponent {
     }
   ];
 
-  valuesHeader = 'Our Core Values';
-  values: ValueItem[] = [
+  readonly valuesHeader = 'Our Core Values';
+  readonly values: ValueItem[] = [
     {
       title: 'Obsessive Detail',
       description: 'We believe details are not the details; they make the entire design. From grout widths to grain directions, nothing is overlooked.'
